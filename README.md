@@ -129,7 +129,13 @@ docker-compose down -v
 
 ## 📸 Screenshot
 
-![App UI](./screenshots/ui.png)
+
+### 🔓 Login & Register
+![Login and Register](./1.png)
+
+### 🔐 Password Generator Dashboard
+![App Dashboard](./2.png)
+
 
 ---
 
