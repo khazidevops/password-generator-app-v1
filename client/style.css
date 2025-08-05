@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #1b104f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  background-color: #2a1d7c;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  width: 90%;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: cyan;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #00e0e0;
+}
+
+.settings {
+  margin-top: 20px;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+ul#profileList {
+  text-align: left;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+ul#profileList li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+}
+
+ul#profileList li button {
+  margin-left: 10px;
+  background: #f06292;
+  color: white;
+  padding: 6px 10px;
+}
+
+ul#profileList li button:hover {
+  background: #ec407a;
+}
+
+#loginSection, #registerSection, #appSection {
+  margin-bottom: 30px;
+}
+
+#loginSection input, #registerSection input {
+  display: block;
+  margin: 10px auto;
+}

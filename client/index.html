@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Login Section -->
+    <div id="loginSection">
+      <h1>Login</h1>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p id="loginError" style="color:red"></p>
+      <p>No account? <a href="#" onclick="toggleToRegister()">Register here</a></p>
+    </div>
+
+    <!-- Register Section -->
+    <div id="registerSection" style="display: none;">
+      <h1>Register</h1>
+      <input type="text" id="regUsername" placeholder="Choose a Username">
+      <input type="password" id="regPassword" placeholder="Choose a Password">
+      <button onclick="register()">Register</button>
+      <p id="regMessage" style="color:red"></p>
+      <p>Already have an account? <a href="#" onclick="toggleToLogin()">Back to Login</a></p>
+    </div>
+
+    <!-- App Section -->
+    <div id="appSection" style="display: none;">
+      <button onclick="logout()" style="float: right; background-color: crimson; color: white;">Logout</button>
+      <h1>Generate a Strong Password!</h1>
+      <input type="text" id="passwordBox" readonly>
+      <div>
+        <button onclick="generatePassword()">Generate Random Password</button>
+        <button onclick="copyPassword()">Copy</button>
+        <button onclick="saveToProfile()">Save</button>
+      </div>
+
+      <div class="settings">
+        <label>Password Length:
+          <input type="number" id="length" value="16" min="4" max="32">
+        </label><br>
+        <label><input type="checkbox" id="includeNumbers" checked> Include Numbers (0-9)</label><br>
+        <label><input type="checkbox" id="includeSymbols" checked> Include Symbols (!@#$...)</label><br>
+        <label><input type="checkbox" id="includeUppercase" checked> Include Uppercase (A-Z)</label><br>
+        <label><input type="checkbox" id="includeLowercase" checked> Include Lowercase (a-z)</label><br>
+        <hr>
+        <input type="text" id="url" placeholder="Website URL">
+        <input type="text" id="savedUsername" placeholder="Username for Site">
+      </div>
+
+      <h2>Saved Profiles</h2>
+      <ul id="profileList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleToRegister() {
+      document.getElementById("loginSection").style.display = "none";
+      document.getElementById("registerSection").style.display = "block";
+    }
+
+    function toggleToLogin() {
+      document.getElementById("registerSection").style.display = "none";
+      document.getElementById("loginSection").style.display = "block";
+    }
+
+    function logout() {
+      document.getElementById("appSection").style.display = "none";
+      document.getElementById("loginSection").style.display = "block";
+      document.getElementById("loginUsername").value = "";
+      document.getElementById("loginPassword").value = "";
+      document.getElementById("loginError").innerText = "";
+    }
+  </script>
+</body>
+</html>
